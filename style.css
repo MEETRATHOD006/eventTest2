@@ -180,7 +180,7 @@ table tbody tr:hover {
 
 button#memberLoginBtn {
     display: block;
-    width: 400px;
+    width: 100%;
     padding: 10px;
     background-color: #007bff;
     color: #fff;
@@ -206,6 +206,10 @@ button#memberLoginBtn:hover {
 .close:hover,
 .close:focus {
     color: #000;
+}
+
+#memberLoginForm{
+    width: 100%;
 }
 
 
