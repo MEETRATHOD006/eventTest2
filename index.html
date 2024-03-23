@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gathering Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gathering Registration</h1>
+        <form id="registrationForm">
+            <input type="text" id="enrollmentNumber" placeholder="Enrollment Number" required>
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+
+            <h2>Food and Drinks</h2>
+            <!-- Food and drinks options -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+            <div class="food-item">
+                <img src="AlloPuri.jpg" alt="AlooPuri">
+                <span>Aloo Puri</span>
+                <span>₹20</span>
+                <input type="number" id="AlooPuriQuantity" value="0" min="0">
+            </div>
+            <div class="food-item">
+                <img src="ThumsUp.jpg" alt="ThumsUp">
+                <span>ThumsUp</span>
+                <span>₹40</span>
+                <input type="number" id="ThumsUpQuantity" value="0" min="0">
+            </div>
+            <div class="food-item">
+                <img src="VadaPav.jpg" alt="VadaPav">
+                <span>Vada Pav</span>
+                <span>₹15</span>
+                <input type="number" id="VadaPavQuantity" value="0" min="0">
+            </div>
+            <div class="food-item">
+                <img src="burger.jpg" alt="burger">
+                <span>Burger</span>
+                <span>₹50</span>
+                <input type="number" id="burgerQuantity" value="0" min="0">
+            </div>
+        </div>
+            <!-- Add more food items here -->
+            <button type="button" id="registerBtn">Register</button>
+        </form>
+        <div id="qrCode" style="display: none;">
+            <!-- QR Code will be displayed here -->
+            <p>If you pay the amount, your registration will be confirmed within a few hours.</p>
+            <img src="https://eko.in/assets/img/bill-payment/QR.png" alt="QR Code">
+        </div>
+        
+        <h2>Registered Participants</h2>
+        <table id="registrationTable">
+            <thead>
+                <tr>
+                    <th>Enrollment Number</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Total Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Registration data will be dynamically added here -->
+            </tbody>
+        </table>
+
+        <!-- Button to trigger login popup -->
+<button id="memberLoginTrigger">Login as a Member</button>
+
+<!-- Member login popup -->
+<div id="memberLoginPopup" class="login-popup">
+    <div class="login-popup-content">
+        <span class="close" id="closeMemberLogin">&times;</span>
+        <h2>Member Login</h2>
+        <form id="memberLoginForm">
+            <div class="form-group">
+                <label for="memberId">ID:</label>
+                <input type="text" id="memberId" name="memberId" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" id="memberLoginBtn">Login</button>
+        </form>
+    </div>
+</div>
+
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
