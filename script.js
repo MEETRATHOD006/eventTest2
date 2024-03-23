@@ -2,6 +2,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Array to store registration data
     var registrations = [];
 
+    // Function to check if enrollment number already exists
+    function isDuplicateEnrollment(enrollmentNumber) {
+        return registrations.some(function(registration) {
+            return registration.enrollmentNumber === enrollmentNumber;
+    });
+}
+
+    // Function to check if phone number already exists
+    function isDuplicatePhoneNumber(phoneNumber) {
+        return registrations.some(function(registration) {
+            return registration.phoneNumber === phoneNumber;
+    });
+}
     // Default member IDs and passwords
     var members = [
         { id: "meet19", password: "19012006" },
@@ -37,6 +50,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // Validate phone number format
         if (!validatePhoneNumber(phoneNumber)) {
             alert("Phone number should be a 10-digit number.");
+            return;
+        }
+
+        // Check if enrollment number already exists
+        if (isDuplicateEnrollment(enrollmentNumber)) {
+            alert("Enrollment number already exists. Please enter a different enrollment number.");
+            return;
+        }
+
+        // Check for duplicate phone number
+        if (isDuplicatePhoneNumber(phoneNumber)) {
+            alert("Phone number already exists. Please enter a different phone number.");
             return;
         }
 
